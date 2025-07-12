@@ -1,47 +1,70 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const App = () => {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-4 py-10 bg-black text-white font-sans">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 py-10">
       {/* Logo */}
-      <img
-        src="https://i.ibb.co/sd9gYjZ/logo.png"
-        alt="Jephter Projects Logo"
-        className="w-32 h-32 mb-6 rounded-full shadow-xl"
-      />
+      <a href="https://ibb.co/sd9gYjZZ">
+        <img
+          src="https://i.ibb.co/sd9gYjZZ/logo.png"
+          alt="logo"
+          border="0"
+          className="w-24 h-24 md:w-32 md:h-32 rounded-full shadow-lg mb-6"
+        />
+      </a>
 
-      {/* Heading */}
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-        Jephter Projects
-      </h1>
-      <p className="text-lg text-gray-300 mb-10 text-center max-w-xl">
-        Explore my creations. Each one is built with purpose, passion, and precision.
-      </p>
+      {/* Name + Code Icon */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-center"
+      >
+        <h1 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-2">
+          Jephter Projects <span className="text-white">&lt;/&gt;</span>
+        </h1>
+        <p className="text-gray-300 text-lg mt-2">
+          Innovative web projects built with code, passion & precision.
+        </p>
+      </motion.div>
 
-      {/* Projects Grid */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl w-full">
-        {/* AI Essay Generator Card */}
+      {/* Project Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="mt-14 w-full max-w-3xl"
+      >
         <a
           href="https://ai-fq7z.onrender.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:scale-105 hover:border-white/20 transition shadow-xl"
+          className="block bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-yellow-500 hover:shadow-xl transition-all duration-300"
         >
-          <img
-            src="https://i.ibb.co/BVWMWyN/essay-logo.png"
-            alt="AI Essay Generator"
-            className="w-full h-40 object-contain mb-4"
-          />
-          <h2 className="text-2xl font-semibold mb-2">AI Essay Generator</h2>
-          <p className="text-gray-300 text-sm">
-            Instantly generate essays using AI. Provide a topic and get well-written content in seconds.
+          <a href="https://ibb.co/BVWMWyND">
+            <img
+              src="https://i.ibb.co/BVWMWyND/Screenshot-20250711-231407.png"
+              alt="Screenshot-20250711-231407"
+              border="0"
+              className="w-full h-48 object-contain mb-4 rounded"
+            />
+          </a>
+          <h2 className="text-2xl font-semibold text-yellow-300">AI Essay Generator</h2>
+          <p className="text-gray-400 mt-2 text-sm">
+            Instantly generate high-quality essays with just a topic. Powered by AI, built with efficiency.
           </p>
         </a>
-      </section>
+      </motion.div>
 
-      {/* Contact Section */}
-      <footer className="mt-16 text-center">
-        <p className="text-lg mb-3">Want to stay connected?</p>
+      {/* WhatsApp CTA */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="mt-16 text-center"
+      >
+        <p className="text-lg text-white mb-3">Let’s connect & collaborate</p>
         <a
           href="https://whatsapp.com/channel/0029VbAxkJl0lwgqAOojKI3R"
           target="_blank"
@@ -49,8 +72,8 @@ const App = () => {
         >
           Join My WhatsApp Channel
         </a>
-      </footer>
-    </main>
+      </motion.div>
+    </div>
   );
 };
 
