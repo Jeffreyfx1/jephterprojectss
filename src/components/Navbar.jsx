@@ -35,3 +35,9 @@ const Navbar = () => {
           <li><a href="#faq" className="block hover:text-yellow-400">FAQ</a></li>
           <li><a href="#contact" className="block hover:text-yellow-400">Contact</a></li>
         </ul>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
