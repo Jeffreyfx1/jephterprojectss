@@ -1,0 +1,14 @@
+entrypoint = "index.html"
+
+[nix]
+channel = "stable-24_11"
+
+[packager]
+language = "nodejs"
+
+[env]
+PORT = "5173"
+
+[deployment]
+run = ["npm", "run", "dev"]
+deploymentTarget = "preview"
